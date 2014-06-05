@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery</title>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+       $(".img").mouseover(function(){
+	     $(this).children('span').css("opacity","0.9");
+		
+		 });
+	  $(".img").mouseout(function(){
+	     $(this).children('span').css("opacity","0");
+		
+		 });
+	   
+	 $(".img span").hover(function(){
+	      	$(this).children('s').addClass('sHover');
+		  },function(){
+		  	$(this).children('s').removeClass('sHover');
+		 });
+		 
+		$(".img1 li").hover(function(){
+	      $(this).children('p').addClass("span-bgred");
+		  },function(){
+		  $(this).children('p').removeClass("span-bgred");
+		});
+		
+	   $(".img2 li").hover(function(){
+		 //$(this).children("a").animate({top:'158px'});
+		 $(this).find("a").animate({top:158},{queue:false,duration:180});
+	   },function() {
+		// $(this).children("a").animate({top:'188px'});
+		$(this).find("a").animate({top:188},{queue:false,duration:180});
+		   });
+		   
+		$(".img3 li").hover(function(){
+		 $(this).addClass("hover");
+	   },function(){
+		 $(this).removeClass("hover");
+		   });
+		   
+      $(".img4 li").hover(function(){
+		 $(this).append('<div class="block"></div>')
+	  },function(){
+		 $(this).find(".block").remove();
+		});
+		
+		
+	 $(".img5 li").hover(function(){
+	     $(this).find(".imgtext").slideDown("fast");
+	   },function(){
+		   
+		 $(this).find(".imgtext").slideUp("fast"); 
+		});
+		
+	 $(".J_hs").click(function(){
+		 $(this).next('img').toggle();
+		   if($(this).next('img').css('display') == 'none')
+				   {
+					 $(this).text('查看');
+				   }else
+				   {
+				     $(this).text('收起');
+				   }
+				  
+		 });
+	 $(".img7").find("li").each(function(){
+		 $(this).hover(function(){
+		 $(this).siblings().find(".zhezhao").stop();	 
+		 $(this).siblings().find(".zhezhao").fadeTo("fast",0.5);
+		 },function(){
+		 $(this).siblings().find(".zhezhao").stop();
+		 $(this).siblings().find(".zhezhao").fadeTo("fast",0);
+			 });
+		  
+		 });
+		  
+ $(".img7 li, .img5 li,.img2 li").hover(function(){
+	  $(this).children('img').fadeTo("fast",0.5);
+	 	
+	  },function(){
+	  $(this).children('img').fadeTo("fast",1);  
+	 }); 
+	 
+  $(".img8 li").hover(function(){
+	  $(this).css({border:"2px solid #ccc"}).addClass("imgwh");
+	 
+  },function(){
+	   $(this).css({border:"none"}).removeClass("imgwh");
+	  
+	  });	
+	
+	 });
+</script>
+<style type="text/css">
+body:before {content: "";position: fixed; top: -10px; left: 0; width: 100%; height: 10px; -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+-moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);box-shadow: 0px 0px 10px rgba(0,0,0,.8);z-index: 100;}
+*{ margin:0; padding:0;}
+ body{ font:30px/30px "方正黄草简体"; color:#F00; padding-bottom:50px;}
+ img{ border:none; vertical-align:top;} 
+ ul{ width: 960px; height: auto; overflow: hidden; margin: 0 auto; color: #000;}
+ ul li{ float:left; width:250px; height:188px; margin:10px; list-style:none; position:relative; overflow:hidden;}  
+.img span{ position:absolute; top:0; right:0; width:57px; height:20px; line-height:19px; z-index: 1; font-size:12px; color:#FFF; 
+   -webkit-transition: all .5s ease-in;transition: all .5s ease-in;
+	-webkit-backface-visibility: hidden;opacity: 0;filter: alpha(opacity=0);}
+ .img span b{ position:absolute; top:0; right:0; width:47px; height:20px; padding-left:10px; background:#4D2626; border-radius:10px; display:block;  z-index: 2; opacity:0.6; filter: alpha(opacity=60);}
+ .img span s{ position:absolute; top:0; right:0; width:20px; height:20px;  display:block;  border-radius:10px;z-index: 3;
+   background-position: -124px 2px; background-image:url(ico.png); background-color: #C3C3C3; opacity:0.9; filter: alpha(opacity=90); 
+   transition: all 0.5s ease-in 0s; -webkit-transition: all .5s ease-in;}
+ .img span s.sHover{ background-color: #b90000;background-position:-124px 2px; transition: all 0.5s ease-in 0s;-webkit-transition: all .5s ease-in;}  
+ .img1 p{ background-color: #1A0000;bottom: 0;height: 27px;left:0px;margin-top: 24px;opacity: 0.85;position: absolute;width: 100%;z-index: 5; 
+  font-size:14px; color:#FFF; text-align: center;}
+  .img1 p span{ display:block; background:#BD0000;z-index: 1; width: 100%; height: 27px; top: 27px; left:0; position:absolute; transition: all 0.5s ease-in 0s; -webkit-transition: all .5s ease-in;} 
+  .img1 p b{color: #FFFFFF;font-weight: normal; height: 27px; left: 0; line-height: 27px; position: absolute; top: 0; width: 100%;z-index: 2;}
+  .img1 p.span-bgred span{top:0; transition: all 0.5s ease-in 0s; -webkit-transition: all .5s ease-in;} 
+.img2 a{position: absolute;top: 188px;left: 0;height: 30px;width: 100%;overflow: hidden;opacity: .8;filter: alpha(opacity = 80);z-index: 3;
+    background-color: #333;}
+  .bFlisc-mask-shop{color: #FFFFFF; display: inline; float: left;height: 30px; line-height: 30px; margin-left: 10px; overflow: hidden;
+   padding-right: 10px; white-space: nowrap; width: 120px; font-size:13px;}
+   .bFlisc-mask-add { color: #FFFFFF;float:right; font-weight: normal;height: 30px;line-height: 30px; padding-right: 10px; font-size:13px;}
+      
+.img3{ width:190px; padding-top:50px; overflow:visible;}
+   .img3 li{ width:95px; height:56px; float:left; position:relative; border-bottom:1px dotted  #DBDBDB; margin:0; overflow:visible;}
+   .img3 li .a-img{color: #666666;cursor: pointer;display: block;text-align: center;}
+   .img3 li .img-logo{ background-color:#FFFFF; border-right:1px dotted #DBDBDB; display: block;margin-top: 6px; overflow: hidden; padding: 0 3px;
+    width: 88px;}
+   .img3 li .mask{ display:none; font-size:12px; opacity:0;}
+   .img3 li .mask-add {background-color: #DDDDDD; color: #000000;display: inline-block;font-weight: normal; height: 30px; line-height: 30px;
+    text-align: center;width: 93px;z-index: 5;}
+   .a-img:hover{position:absolute;z-index:5;top:-10px;left:0;width:93px;border:1px solid #ccc;-webkit-box-shadow:0 1px 1px #bbb;-moz-box-shadow:0 1px 1px #bbb;box-shadow:0 1px 1px #bbb;}
+    .a-img:hover .mask{ display:block;opacity:1; text-decoration:none;}
+	.img3 li.hover{ z-index:3;}  
+.img4 .block{ width:250px; height:188px; background:url(btn.png) no-repeat center center #000000; position:absolute; left:0; top:0; FILTER: alpha(opacity=70); opacity: 0.7; -moz-opacity: 0.7;}   
+.text{ width:250px; height:auto; background-color:#FFFFFF; FILTER: alpha(opacity=70); opacity: 0.7; -moz-opacity: 0.7; position:absolute; left:0px; bottom:0px;}
+	.imgbt{ width:250px; height:30px;}
+	.imgbt span{ display:block; padding:0 5px;}
+	.span_a{  line-height:30px; float:left; font-size:14px; color:#FF3366; }
+	.span_b{  line-height:30px; float:right; font-size:16px; color:#FF3366; font-family:Georgia, "Times New Roman", Times, serif; text-align:right;} 
+	.clear{ display:block; font-size:0px; height:0px; line-height:0px; clear:both;}
+	.imgtext{ width:250px; height:60px; color:#333333; font-size:12px; padding:0px 10px; display:none;}   
+ 
+.img6 li{height:220px;}
+.img7 .zhezhao{ position:absolute; top:0px; left:0; background: black; width:250px; height:188px; opacity:0;}
+.img8 .imgwh{ width:246px; height:184px;}
+.img8 a{ position:absolute; top:158px; left:0; width:250px; height:30px; line-height:30px; text-align:center; background:black; opacity:0.5; font-size:12px; color:#09C; display:none;}
+.img8 .imgwh a{ background: #09F; color: #F00; display:block;}
+</style>
+</head>
+<body>
+img
+<hr>
+<ul class="img">
+  <li class="img"><img src="1.jpg" width="250" height="188" /> <span><b>关注</b><s ></s></span> </li>
+  <li class="img"><img src="2.jpg" width="250" height="188" /> <span><b>关注</b><s ></s></span> </li>
+  <li class="img"><img src="3.jpg" width="250" height="188" /> <span><b>关注</b><s ></s></span> </li>
+</ul>
+img1
+<hr>
+<ul class="img1">
+  <li><img src="1.jpg" width="250" height="188" />
+    <p> <b>无波点，不成夏之靓丽美鞋！GO>></b> <span></span> </p>
+  </li>
+  <li><img src="2.jpg" width="250" height="188" />
+    <p> <b>无波点，不成夏之靓丽美鞋！GO>></b> <span></span> </p>
+  </li>
+  <li><img src="3.jpg" width="250" height="188" />
+    <p> <b>无波点，不成夏之靓丽美鞋！GO>></b> <span></span> </p>
+  </li>
+
+</ul>
+img2
+<hr>
+<ul class="img2">
+  <li><img src="1.jpg" width="250" height="188" />
+    <a href="#"><b class="bFlisc-mask-shop">优衣库</b><b class="bFlisc-mask-add ">+ 关注</b></a>
+  </li>
+  <li><img src="2.jpg" width="250" height="188" />
+ <a href="#"><b class="bFlisc-mask-shop">优衣库</b><b class="bFlisc-mask-add ">+ 关注</b></a>
+  </li>
+  <li><img src="3.jpg" width="250" height="188" />
+  <a href="#"><b class="bFlisc-mask-shop">优衣库</b><b class="bFlisc-mask-add ">+ 关注</b></a>
+  </li>
+
+</ul>
+<!--
+img3
+<hr>
+ <ul style=" padding-bottom:50px;">
+    <ul class="img3">
+      <li><a class="a-img" href="#"><span class="img-logo"><img src="01.jpg" width="90" height="45" /></span>
+      <span class="mask"><b class="mask-add ">+ 关注品牌</b></span>
+      </a>
+        
+      </li>
+      <li><a class="a-img" href="#"><span class="img-logo"><img src="01.jpg" width="90" height="45" /></span>
+       <span class="mask"><b class="mask-add ">+ 关注品牌</b></span>
+      </a>
+      
+      </li>
+      <li><a class="a-img" href="#"><span class="img-logo"><img src="01.jpg" width="90" height="45" /></span>
+       <span class="mask"><b class="mask-add ">+ 关注品牌</b></span>
+      </a>
+    
+      </li>
+      <li><a class="a-img" href="#"><span class="img-logo"><img src="01.jpg" width="90" height="45" /></span>
+       <span class="mask"><b class="mask-add ">+ 关注品牌</b></span>
+      </a>
+     
+      </li>
+      <li><a class="a-img" href="#"><span class="img-logo"><img src="01.jpg" width="90" height="45" /></span>
+       <span class="mask"><b class="mask-add ">+ 关注品牌</b></span>
+      </a>
+     
+      </li>
+      <li><a class="a-img" href="#"><span class="img-logo"><img src="01.jpg" width="90" height="45" /></span>
+       <span class="mask"><b class="mask-add ">+ 关注品牌</b></span>
+      </a>
+    
+      </li>
+    </ul>
+    </ul>
+    -->
+img4
+<hr>
+ <ul class="img4">
+   <li><img src="1.jpg" width="250" height="188" /></li>
+   <li><img src="2.jpg" width="250" height="188" /></li>
+   <li><img src="3.jpg" width="250" height="188" /></li>
+ 
+ </ul>
+img5
+<hr>
+<ul class="img5">
+  <li><img src="1.jpg" width="250" height="188" />
+  <div class="text">
+   <div class="imgbt">
+       <span class="span_a">韩版短翻领POLO衫</span>
+       <span class="span_b">￥59.00</span>
+       <span class="clear"></span>
+    </div>
+     <div class="imgtext">
+      2012新品男T恤韩版短袖男士夏装男装翻领t恤POLO衫 货到付款 T93
+   </div>
+    </div>
+  </li>
+  <li><img src="2.jpg" width="250" height="188" />
+   <div class="text">
+   <div class="imgbt">
+       <span class="span_a">韩版短翻领POLO衫</span>
+       <span class="span_b">￥59.00</span>
+       <span class="clear"></span>
+    </div>
+     <div class="imgtext">
+      2012新品男T恤韩版短袖男士夏装男装翻领t恤POLO衫 货到付款 T93
+   </div>
+    </div>
+  </li>
+ <li><img src="2.jpg" width="250" height="188" />
+   <div class="text">
+   <div class="imgbt">
+       <span class="span_a">韩版短翻领POLO衫</span>
+       <span class="span_b">￥59.00</span>
+       <span class="clear"></span>
+    </div>
+     <div class="imgtext">
+      2012新品男T恤韩版短袖男士夏装男装翻领t恤POLO衫 货到付款 T93
+   </div>
+    </div>
+  </li>
+</ul>
+img6
+<hr>
+  <ul class="img6">
+  <li><a class="J_hs"  href="javascript:void(0)">查看</a>
+    <img src="2.jpg" width="250" height="188" style=" display:none;"/>
+   
+    </li>
+    <li><a class="J_hs" href="javascript:void(0)"> 查看</a>
+    <img src="2.jpg" width="250" height="188" style=" display:none;" />
+   
+    </li>
+    <li><a class="J_hs" href="javascript:void(0)">查看</a>
+    <img src="2.jpg" width="250" height="188"  style=" display:none;"/>
+   
+    </li>
+  </ul>
+img7
+<hr>
+  <ul class="img7">
+  <li><img src="1.jpg" width="250" height="188"/>
+    <div class="zhezhao"></div>
+  </li>
+  <li><img src="2.jpg" width="250" height="188" />
+  <div class="zhezhao"></div>
+  </li>
+  <li><img src="3.jpg" width="250" height="188" />
+  <div class="zhezhao"></div>
+  </li>
+  </ul>
+  img8
+<hr>
+ <ul class="img8">
+  <li><img src="4.jpg" width="250" height="188"/>
+   <a href="#">【大禹治水】竹影倾心 </a>
+  </li>
+  <li><img src="5.jpg" width="250" height="188" />
+  <a href="#">【大禹治水】竹影倾心 </a>
+  </li>
+  <li><img src="6.jpg" width="250" height="188" />
+  <a href="#">【大禹治水】竹影倾心 </a>
+  </li>
+ </ul> 
+</body>
+</html>
