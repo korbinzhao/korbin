@@ -1,0 +1,16 @@
+<span class="headline">行业：</span>
+<select name="industry">
+	<option value="internet">IT/互联网/通信/电子</option>
+	<option value="finance">金融/投资/财会</option>
+	<option value="ad">广告/媒体/出版/艺术</option>
+	<option value="market">市场/销售/客服</option>
+	<option value="hr">人事/行政/管理</option>
+	<option value="building">建筑/房产/物业</option>
+	<option value="consumergoods">消费品/贸易/物业</option>
+	<option value="consult">咨询/法律/认证</option>
+	<option value="product">生产/制造/营运/采购</option>
+	<option value="biology">生物/制药/医疗/护理</option>
+	<option value="education">教育/培训/翻译</option>
+	<option value="research">科研/环保/休闲/其他</option>
+	
+</select><br/>
